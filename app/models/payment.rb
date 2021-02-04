@@ -21,4 +21,13 @@ class Payment < ApplicationRecord
   belongs_to :receiver, class_name: 'User'
 
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000 }
+  validate :users_friendship
+
+  private
+
+  def users_friendship
+    return if sender&.friend_with?(receiver)
+
+    errors.add(:base, I18n.t('model.payment.error.users_friendship'))
+  end
 end
