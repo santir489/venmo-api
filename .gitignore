@@ -28,3 +28,6 @@
 
 # Ignore config files
 /config/database.yml
+
+# Ignore coverage
+/coverage
