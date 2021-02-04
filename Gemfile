@@ -17,6 +17,7 @@ group :development, :test do
   gem 'annotate', '~> 2.6.5'
   gem 'bullet', '~> 6.1', '>= 6.1.3'
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rails_best_practices', '~> 1.20'
   gem 'reek', '~> 6.0', '>= 6.0.3'
   gem 'rubocop-rails', '~> 2.9', '>= 2.9.1'
 end
