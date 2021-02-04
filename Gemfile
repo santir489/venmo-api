@@ -19,6 +19,7 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   gem 'rails_best_practices', '~> 1.20'
   gem 'reek', '~> 6.0', '>= 6.0.3'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
   gem 'rubocop-rails', '~> 2.9', '>= 2.9.1'
 end
 

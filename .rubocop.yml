@@ -102,3 +102,8 @@ Style/ModuleFunction:
 
 Style/ReturnNil:
   Enabled: true
+
+Style/BlockComments:
+  Enabled: true
+  Exclude:
+    - spec/spec_helper.rb
