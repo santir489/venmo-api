@@ -17,9 +17,13 @@
 class User < ApplicationRecord
   has_many :friendships_a, class_name: 'Friendship', inverse_of: :user_a, dependent: :destroy,
                            foreign_key: :user_a_id
-
   has_many :friendships_b, class_name: 'Friendship', inverse_of: :user_b, dependent: :destroy,
                            foreign_key: :user_b_id
+
+  has_many :sent_payments, class_name: 'Payment', inverse_of: :sender, dependent: :destroy,
+                           foreign_key: :sender_id
+  has_many :received_payments, class_name: 'Payment', inverse_of: :receiver, dependent: :destroy,
+                               foreign_key: :receiver_id
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, uniqueness: { case_sensitive: false }
