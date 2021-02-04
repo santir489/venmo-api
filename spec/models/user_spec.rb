@@ -25,4 +25,27 @@ describe User, type: :model do
     it { is_expected.to allow_value('example@mail.com').for(:email) }
     it { is_expected.not_to allow_value('example').for(:email) }
   end
+
+  describe '#friend_with?' do
+    let!(:user_a) { create(:user) }
+    let!(:user_b) { create(:user) }
+
+    subject { user_a.friend_with?(user_b) }
+
+    context 'when user_a is not friend with user_b' do
+      it 'returns false' do
+        expect(subject).to be_falsey
+      end
+    end
+
+    context 'when user_a is friend with user_b' do
+      let!(:friendship) do
+        create(:friendship, user_a: user_a, user_b: user_b)
+      end
+
+      it 'returns true' do
+        expect(subject).to be_truthy
+      end
+    end
+  end
 end
