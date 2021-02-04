@@ -48,4 +48,12 @@ describe User, type: :model do
       end
     end
   end
+
+  describe 'after_create' do
+    subject { create(:user) }
+
+    it 'creates a payment account' do
+      expect { subject }.to change(PaymentAccount, :count).by(1)
+    end
+  end
 end
