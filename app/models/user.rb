@@ -27,6 +27,8 @@ class User < ApplicationRecord
 
   has_one :payment_account, dependent: :destroy
 
+  delegate :balance, to: :payment_account, prefix: true
+
   after_create :create_payment_account
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
