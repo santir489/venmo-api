@@ -29,5 +29,32 @@ describe Payment, type: :model do
     it do
       is_expected.to validate_numericality_of(:amount).is_greater_than(0).is_less_than(1_000)
     end
+
+    describe '#users_friendship' do
+      let(:sender) { create(:user) }
+      let(:receiver) { create(:user) }
+
+      subject { build(:payment, sender: sender, receiver: receiver) }
+
+      context 'when sender and receiver are not friends' do
+        it 'is not valid' do
+          expect(subject).not_to be_valid
+        end
+
+        it 'adds users_friendship error message' do
+          subject.valid?
+          error_message = I18n.t('model.payment.error.users_friendship')
+          expect(subject.errors.messages[:base]).to include(error_message)
+        end
+      end
+
+      context 'when sender and receiver are friends' do
+        let!(:friendship) { create(:friendship, user_a: sender, user_b: receiver) }
+
+        it 'is valid' do
+          expect(subject).to be_valid
+        end
+      end
+    end
   end
 end
