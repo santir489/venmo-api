@@ -16,6 +16,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'annotate', '~> 2.6.5'
   gem 'bullet', '~> 6.1', '>= 6.1.3'
+  gem 'factory_bot_rails', '~> 6.1'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rails_best_practices', '~> 1.20'
   gem 'reek', '~> 6.0', '>= 6.0.3'
@@ -33,6 +34,7 @@ end
 group :test do
   gem 'faker', '~> 2.15', '>= 2.15.1'
   gem 'rspec-json_expectations', '~> 2.2'
+  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
   gem 'simplecov', '~> 0.21.2'
 end
 
