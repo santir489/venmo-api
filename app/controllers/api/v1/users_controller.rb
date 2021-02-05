@@ -8,7 +8,7 @@ module Api
       def payment
         PaymentService.new(user, receiver, params[:amount], params[:description]).create!
 
-        head :no_content
+        head :ok
       end
 
       def feed
