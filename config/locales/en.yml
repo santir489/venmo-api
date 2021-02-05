@@ -33,6 +33,8 @@ en:
   api:
     error:
       not_found: "Couldn't find the record"
+      server: 'An error ocurred'
+      missing_param: 'A required param is missing'
   model:
     friendship:
       error:
