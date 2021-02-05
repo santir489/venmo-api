@@ -4,7 +4,7 @@ module Api
       include Pagy::Backend
 
       rescue_from Exception,                    with: :render_error
-      rescue_from Exceptions::NotFriend,        with: :render_not_friend_error
+      rescue_from VenmoError,                   with: :render_venmo_error
       rescue_from ActiveRecord::RecordInvalid,  with: :render_record_invalid
       rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
@@ -26,7 +26,7 @@ module Api
         render json: { error: exception.record.errors.as_json }, status: :bad_request
       end
 
-      def render_not_friend_error(exception)
+      def render_venmo_error(exception)
         logger.info(exception) # for logging
         render json: { error: exception.message }, status: :bad_request
       end

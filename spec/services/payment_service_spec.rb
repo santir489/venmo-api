@@ -18,7 +18,7 @@ describe PaymentService, type: :service do
 
     context 'when sender and receiver are not friends' do
       it 'raises a NotFriend error' do
-        expect { subject }.to raise_exception(Exceptions::NotFriend).and(
+        expect { subject }.to raise_exception(Payments::NotFriendsError).and(
           change(Payment, :count).by(0)
         )
       end
@@ -28,7 +28,7 @@ describe PaymentService, type: :service do
       let!(:friendship) { create(:friendship, user_a: sender, user_b: receiver) }
 
       it 'does not raise a argument error' do
-        expect { subject }.not_to raise_exception(Exceptions::NotFriend)
+        expect { subject }.not_to raise_exception(Payments::NotFriendsError)
       end
 
       it 'decreases sender balance' do

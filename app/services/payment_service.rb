@@ -23,7 +23,7 @@ class PaymentService
   def validate_friendship!
     return if sender.friend_with?(receiver)
 
-    raise Exceptions::NotFriend, I18n.t('model.payment.error.users_friendship')
+    raise Payments::NotFriendsError
   end
 
   def create_payment
