@@ -43,6 +43,6 @@ class User < ApplicationRecord
   private
 
   def create_payment_account
-    PaymentAccount.create(user: self)
+    PaymentAccount.create!(user: self)
   end
 end
