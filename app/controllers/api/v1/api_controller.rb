@@ -1,6 +1,8 @@
 module Api
   module V1
     class ApiController < ApplicationController
+      include Pagy::Backend
+
       rescue_from Exception,                    with: :render_error
       rescue_from Exceptions::NotFriend,        with: :render_not_friend_error
       rescue_from ActiveRecord::RecordInvalid,  with: :render_record_invalid
