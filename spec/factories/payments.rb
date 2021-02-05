@@ -22,9 +22,5 @@ FactoryBot.define do
     receiver    factory: :user
     amount      { Faker::Number.within(range: 1..999) }
     description { Faker::Lorem.words(number: (0..20)) }
-
-    before(:create) do |payment|
-      create(:friendship, user_a: payment.sender, user_b: payment.receiver)
-    end
   end
 end
