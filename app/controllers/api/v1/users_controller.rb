@@ -11,6 +11,11 @@ module Api
         render json: {}, status: :no_content
       end
 
+      def feed
+        @pagy, @payments = pagy(FeedService.new(user).fetch)
+        @payments = PaymentDecorator.decorate_collection(@payments)
+      end
+
       private
 
       def user

@@ -43,3 +43,4 @@ en:
     payment:
       error:
         users_friendship: 'Users must be friends'
+      message: '%{sender} paid %{receiver} on %{time} - %{description}'

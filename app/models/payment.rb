@@ -22,6 +22,8 @@ class Payment < ApplicationRecord
 
   delegate :payment_account, to: :sender, prefix: true
   delegate :payment_account, to: :receiver, prefix: true
+  delegate :username, to: :sender, prefix: true
+  delegate :username, to: :receiver, prefix: true
 
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 1_000 }
 end

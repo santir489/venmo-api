@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :user, only: [] do
         member do
           get :balance, controller: :users
+          get :feed, controller: :users
           post :payment, controller: :users
         end
       end
