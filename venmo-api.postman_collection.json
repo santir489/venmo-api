@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "77dfdb6f-4ec9-40a3-8ca2-f3b5c3806903",
+		"name": "venmo-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"friend_id\": \"1\",\n    \"amount\": \"10\",\n    \"description\": \"bet\"\n}"
+				},
+				"url": {
+					"raw": "https://venmo-api.herokuapp.com/api/v1/user/1/balance",
+					"protocol": "https",
+					"host": [
+						"venmo-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Feed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"friend_id\": \"1\",\n    \"amount\": \"10\",\n    \"description\": \"bet\"\n}"
+				},
+				"url": {
+					"raw": "https://venmo-api.herokuapp.com/api/v1/user/1/feed",
+					"protocol": "https",
+					"host": [
+						"venmo-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"feed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Payment",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"friend_id\": \"2\",\n    \"amount\": \"10\",\n    \"description\": \"bet - back\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://venmo-api.herokuapp.com/api/v1/user/1/payment",
+					"protocol": "https",
+					"host": [
+						"venmo-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "https://venmo-api.herokuapp.com"
+		}
+	]
+}
