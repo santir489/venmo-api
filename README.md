@@ -199,3 +199,27 @@ Martial: 500
 Damiani: 10
 Ruglio: 120
 ```
+
+
+# Git workflow
+
+## Branches
+
+### Develop branch
+This branch is the main one because it reflects the work done by the whole team during the development phase in a project. It is used as the base branch until the app is released to production.
+
+### Feature branch (feature/x)
+
+This branch’s purpose is to develop a new feature. It has all the progress until the functionality being developed is completed. Pull requests are created from these type of branches and once they have passed the code review process, they have to be merged to develop.
+
+### Fix branch (fix/x)
+
+This branch is created in order to fix a bug during development phase.
+
+### Enhancement branch (enhancement/x)
+
+This branch is created to add an enhancement during development phase on something that was already merged to the development branch.
+
+### Master branch (master)
+
+It reflects the current code deployed in production, therefore, it must be stable. All the new features to be developed are going to have as origin *develop* and they are going to be merged to master once they are working as expected and approved.
