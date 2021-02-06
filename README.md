@@ -59,13 +59,13 @@ With `rake code_analysis` you can run the code analysis tool, you can omit rules
 * PaymentService:
   It handles the payment transcation
 
-* MoneyTransferService
+* MoneyTransferService:
   Is in charge of transfer money from an external source to an account (mock service)
 
 
 ### Notes
 
-* Namespaces api/v1 were added to handle different versions.
+* Namespaces `api/v1`, in routes, were added to handle different versions of the application.
 * When a User is created, a PaymentAccount is created and associated to the User.
 * If a User stop being friend with another User, User will not see previous payments of the another User in the feed section.
 
